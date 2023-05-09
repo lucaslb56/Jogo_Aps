@@ -95,7 +95,7 @@ public class Game extends JPanel implements Runnable {
         // RESPONSÁVEL PELA MOVIMENTAÇÃO DO JOGADOR
         if (gameState == playState) {
             player.update();
-w            vilao1.update(player);
+           vilao1.update(player);
             vilao2.update(player);
             // System.out.println(levelManager.getActiveLevel().contadorLixos);
         }
