@@ -135,7 +135,11 @@ public class Vilao extends Entity {
     int sleep = 180;
     String old_direction;
     public void update(Player player){
-        
+        if (speed == 1){
+            speed = 2;
+        }else{
+            speed = 1;
+        }
         ArrayList<Integer> caminho = findPath(locx, locy, player.locx, player.locy);
         if(caminho == null){
             int col = locx/gp.tileSize;
@@ -208,7 +212,7 @@ public class Vilao extends Entity {
         locy= y;
         switch (direction) {
            
-            case "left" -> locx += 25;
+            case "left" -> locx += 24;
             
             
         }

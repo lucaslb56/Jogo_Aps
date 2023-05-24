@@ -56,8 +56,7 @@ public class Level {
             gp.player.activeItem.deactiveEffect(gp);
         }
         gp.player.setDefaultValues();
-        gp.vilao1.setDefaultValues();
-        gp.vilao2.setDefaultValues();
+        gp.vilao.setDefaultValues();
         timer = new Timer();
         criacaoDeLixos();
         gp.stopMusic();

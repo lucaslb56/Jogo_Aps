@@ -15,11 +15,11 @@ public class TileManager {
 
     public TileManager(Game gp) {
         this.gp = gp;
-        tile = new Tile[200];
+        tile = new Tile[70];
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
         graph = new boolean[gp.maxScreenCol * gp.maxScreenRow][gp.maxScreenCol * gp.maxScreenRow];
         getTileImage();
-        loadMap("res/maps/fase_1.txt");
+        loadMap("res/maps/fase.txt");
         buildGraph();
         for (int i = 0; i < graph[99].length; i++) {
             if (graph[59][i]){
@@ -31,7 +31,6 @@ public class TileManager {
     }
 
     public void getTileImage() {
-        
         try {
             tile[0] = new Tile(ImageIO.read(new FileInputStream("res/tiles/rua_v.png")), false);
             tile[1] = new Tile(ImageIO.read(new FileInputStream("res/tiles/rua_h.png")), false);
@@ -46,7 +45,45 @@ public class TileManager {
             tile[10] = new Tile(ImageIO.read(new FileInputStream("res/tiles/rua_top_mid.png")), false);
             tile[11] = new Tile(ImageIO.read(new FileInputStream("res/tiles/rua_top_right.png")), false);
             tile[12] = new Tile(ImageIO.read(new FileInputStream("res/tiles/space.png")), true);
-            tile[13] = new Tile(ImageIO.read(new FileInputStream("res/tiles/predio.png")), true);
+            tile[13] = new Tile(ImageIO.read(new FileInputStream("res/tiles/cond.png")), true);
+            tile[14] = new Tile(ImageIO.read(new FileInputStream("res/tiles/cond2.png")), true);
+            tile[15] = new Tile(ImageIO.read(new FileInputStream("res/tiles/cond3.png")), true);
+            tile[16] = new Tile(ImageIO.read(new FileInputStream("res/tiles/cond4.png")), true);
+            tile[17] = new Tile(ImageIO.read(new FileInputStream("res/tiles/cond5.png")), true);
+            tile[18] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag1.jpg")), true);
+            tile[19] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag2.jpg")), true);
+            tile[20] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag3.jpg")), true);
+            tile[21] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag4.jpg")), true);
+            tile[22] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag5.jpg")), true);
+            tile[23] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag6.jpg")), true);
+            tile[24] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag7.jpg")), true);
+            tile[25] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag8.jpg")), true);
+            tile[26] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag9.jpg")), true);
+            tile[27] = new Tile(ImageIO.read(new FileInputStream("res/tiles/lag10.jpg")), true);
+            tile[28] = new Tile(ImageIO.read(new FileInputStream("res/tiles/casa.png")), true);
+            tile[29] = new Tile(ImageIO.read(new FileInputStream("res/tiles/casa1.png")), true);
+            tile[30] = new Tile(ImageIO.read(new FileInputStream("res/tiles/casap.png")), true);
+            tile[31] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero1.png")), true);
+            tile[32] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero2.png")), true);
+            tile[33] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero3.png")), true);
+            tile[34] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero4.png")), true);
+            tile[35] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero5.png")), true);
+            tile[36] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero6.png")), true);
+            tile[37] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero7.png")), true);
+            tile[38] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero8.png")), true);
+            tile[39] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero9.png")), true);
+            tile[40] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero10.png")), true);
+            tile[41] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero11.png")), true);
+            tile[42] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero12.png")), true);
+            tile[43] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero13.png")), true);
+            tile[44] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero14.png")), true);
+            tile[45] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero15.png")), true);
+            tile[46] = new Tile(ImageIO.read(new FileInputStream("res/tiles/aero16.png")), true);
+            tile[47] = new Tile(ImageIO.read(new FileInputStream("res/tiles/grama1.png")), true);
+            tile[48] = new Tile(ImageIO.read(new FileInputStream("res/tiles/arvore.png")), true);
+            tile[49] = new Tile(ImageIO.read(new FileInputStream("res/tiles/grama2.png")), true);
+            tile[50] = new Tile(ImageIO.read(new FileInputStream("res/tiles/grama3.png")), true);
+
         } catch (IOException e){e.printStackTrace();}
     }
     
