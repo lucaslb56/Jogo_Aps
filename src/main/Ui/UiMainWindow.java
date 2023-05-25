@@ -77,7 +77,7 @@ public class UiMainWindow extends Ui {
         int y;
         int x;
         //TITULO
-        String text = "JOGUINHO SEM NOME";
+        String text = "RECYCLE RUN";
         y = 150;
         setFontSize(60, Color.gray, g2);
         drawString(text, getCentroTelaText(text, g2), y, g2);

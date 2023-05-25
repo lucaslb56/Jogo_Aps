@@ -11,7 +11,7 @@ public class Main {
         window.setResizable(false);
         //window.setUndecorated(true);
         // Define o titulo da janela do jogo
-        window.setTitle("JOGUINHO");
+        window.setTitle("RECYCLE RUN");
 
         // Instancia a classe de controle do jogo
         Game gamePanel = new Game(window);

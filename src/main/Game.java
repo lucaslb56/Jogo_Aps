@@ -27,7 +27,8 @@ public class Game extends JPanel implements Runnable {
     public Som som = new Som();// responsavel pelo som
     KeyHandler keyH = new KeyHandler(this);// Classe responsável pela leitura de teclas apertadas
     public Player player = new Player(this, keyH);// Classe responsável pelas funcionalidades do player principal
-    public Vilao vilao = new Vilao(this, tileSize*11+2, tileSize*6+2);
+    public Vilao vilao1 = new Vilao(this, tileSize*11+2, tileSize*6+2);
+    public Vilao vilao2 = new Vilao(this, tileSize*11+2, tileSize*11+2);
     
     
     // ESTADOS DO JOGO
@@ -94,7 +95,8 @@ public class Game extends JPanel implements Runnable {
         // RESPONSÁVEL PELA MOVIMENTAÇÃO DO JOGADOR
         if (gameState == playState) {
             player.update();
-            vilao.update(player);
+            vilao1.update(player);
+            vilao2.update(player);
             
             // System.out.println(levelManager.getActiveLevel().contadorLixos);
         }
@@ -112,7 +114,8 @@ public class Game extends JPanel implements Runnable {
             tileM.draw(g2);// DESENHA O MAPA
             levelManager.getActiveLevel().draw(g2, this);//LEVEL
             player.draw(g2);// DESENHA O JOGADOR
-            vilao.draw(g2);
+            vilao1.draw(g2);
+            vilao2.draw(g2);
             
             
         }

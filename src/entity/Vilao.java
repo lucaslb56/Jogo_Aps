@@ -89,7 +89,9 @@ public class Vilao extends Entity {
         int[] fila = new int[numVertices];
         int inicioFila = 0;
         int fimFila = 0;
-    
+        if (gp.tileM.tile[gp.tileM.mapTileNum[startCol][startRow]].colision){
+
+        }
         // Marca o vértice inicial como visitado e adiciona à fila
         visitado[startIndex] = true;
         fila[fimFila++] = startIndex;
@@ -213,7 +215,7 @@ public class Vilao extends Entity {
         switch (direction) {
            
             case "left" -> locx += 24;
-            
+            case "up" -> locy += 24;
             
         }
         
