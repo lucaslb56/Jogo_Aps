@@ -27,14 +27,15 @@ public class Game extends JPanel implements Runnable {
     public Som som = new Som();// responsavel pelo som
     KeyHandler keyH = new KeyHandler(this);// Classe responsável pela leitura de teclas apertadas
     public Player player = new Player(this, keyH);// Classe responsável pelas funcionalidades do player principal
-    public Vilao vilao1 = new Vilao(this, tileSize*11+2, tileSize*6+2);
-    public Vilao vilao2 = new Vilao(this, tileSize*11+2, tileSize*11+2);
+    public Vilao[] vilao = new Vilao[10];
+
+    
     
     
     // ESTADOS DO JOGO
     public final int menuState = 0;
     public final int playState = 1;
-    public final int pauseState = 2;
+   
     public final int gameOver = 3;
     public int gameState = menuState;
     JFrame window;
@@ -48,6 +49,8 @@ public class Game extends JPanel implements Runnable {
         this.addKeyListener(keyH);// ADICIONA A CLASSE DE CONTROLE DAS TECLAS PRESSIONADAS
         this.setFocusable(true);
         setupGame();//DEFINE AS CONFIGURAÇÕES INICIAIS
+        vilao[0] = new Vilao(this, tileSize*11+2, tileSize*6+2);
+        vilao[1] = new Vilao(this, tileSize*11+2, tileSize*11+2);
     }
 
     public void setupGame(){
@@ -95,8 +98,8 @@ public class Game extends JPanel implements Runnable {
         // RESPONSÁVEL PELA MOVIMENTAÇÃO DO JOGADOR
         if (gameState == playState) {
             player.update();
-            vilao1.update(player);
-            vilao2.update(player);
+            vilao[0].update(player);
+            vilao[1].update(player);
             
             // System.out.println(levelManager.getActiveLevel().contadorLixos);
         }
@@ -114,8 +117,8 @@ public class Game extends JPanel implements Runnable {
             tileM.draw(g2);// DESENHA O MAPA
             levelManager.getActiveLevel().draw(g2, this);//LEVEL
             player.draw(g2);// DESENHA O JOGADOR
-            vilao1.draw(g2);
-            vilao2.draw(g2);
+            vilao[0].draw(g2);
+            vilao[1].draw(g2);
             
             
         }
